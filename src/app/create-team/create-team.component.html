@@ -1,0 +1,63 @@
+<form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label>Name Team</label>
+        <input type="text" formControlName="name" class="form-control" placeholder="Team Name" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Logo</label>
+        <input type="image" formControlName="logo" class="form-control" placeholder="Logo" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Geography</label>
+        <input type="text" formControlName="geography" class="form-control" placeholder="Geography" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Major Color</label>
+        <input type="text" formControlName="major_color" class="form-control" placeholder="Color" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Capitain</label>
+        <input type="text" formControlName="capitain" class="form-control" placeholder="Capitain" required>
+    </div>
+
+    <div class="mb-3">
+        <label>score</label>
+        <input type="number" formControlName="score" class="form-control" placeholder="score" required>
+    </div>
+
+    <div class="mb-3">
+        <label>League</label>
+        <input type="text" formControlName="league" class="form-control" placeholder="League" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Ranking</label>
+        <input type="text" formControlName="ranking" class="form-control" placeholder="Ranking" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Warning</label>
+        <input type="text" formControlName="warning" class="form-control" placeholder="Warning" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Status</label>
+        <input type="text" formControlName="status" class="form-control" placeholder="Status" required>
+    </div>
+
+    <div class="mb-3">
+        <label>Members</label>
+        <input type="number" formControlName="members" class="form-control" placeholder="Members" required>
+    </div>
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary" >Create</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn bnt-danger">Reset</button>
+    </div>
+</form>
