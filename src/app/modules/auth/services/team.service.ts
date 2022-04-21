@@ -6,6 +6,8 @@ import { Team } from 'src/app/pages/team/team.model';
   providedIn: 'root'
 })
 export class TeamService {
+  firestore: any;
+ 
   
   constructor( private angularFirestore: AngularFirestore) { }
 
@@ -17,16 +19,19 @@ export class TeamService {
   }
   
   getTeamList(){
-    return this.angularFirestore.collection('team-collection').valueChanges()
+    return this.angularFirestore.collection('team-collection').valueChanges({ id: 'propertyId' })
   }
 
   
 
-  createTeam(team: Team){    
+  createTeam(team: Team){
+    const team_id = this.angularFirestore.createId();
+    team.id = team_id
     return new Promise<any>((resolve, reject)=>{
       this.angularFirestore
       .collection('team-collection')
-      .add(team)
+      .doc(team_id)
+      .set(team)
       .then(reponse => {console.log(reponse)}, error => reject(error));
 
     });
@@ -57,4 +62,7 @@ export class TeamService {
 
     })
   }
+
+ 
 }
+

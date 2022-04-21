@@ -20,7 +20,6 @@ export class TeamComponent implements OnInit {
   constructor(private teamService: TeamService , private _cdr: ChangeDetectorRef,) { }
 
   ngOnInit(): void {
-    console.log(this.listTeams);
     this.getListTeams()
     
   }
@@ -35,6 +34,8 @@ export class TeamComponent implements OnInit {
       }
       
     })
+
+    
     
   }
   changeStatus(): void {
@@ -46,4 +47,5 @@ export class TeamComponent implements OnInit {
 
     }, 500);
   }
+  
 }

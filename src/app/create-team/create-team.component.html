@@ -26,7 +26,8 @@
 
     <div class="mb-3">
         <label>score</label>
-        <input type="number" formControlName="score" class="form-control" placeholder="score" required>
+        <input type="number" formControlName="score" class="form-control" placeholder="score"  required>
+        
     </div>
 
     <div class="mb-3">
@@ -48,10 +49,10 @@
         <label>Status</label>
         <input type="text" formControlName="status" class="form-control" placeholder="Status" required>
     </div>
-
+    
     <div class="mb-3">
         <label>Members</label>
-        <input type="number" formControlName="members" class="form-control" placeholder="Members" required>
+        <input type="number" formControlName="members" class="form-control" placeholder="Members" min="0" max="20" required>
     </div>
 
 

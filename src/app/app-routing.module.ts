@@ -15,11 +15,13 @@ export const routes: Routes = [
   {path:'create-players', component:CreatePlayersComponent},
   //{path:'players', component: PlayersComponent},
   //{path: '**', redirectTo: 'players', component: PlayersComponent},
+  {path:'edit-players/:id', component:CreatePlayersComponent},
 
   {path:'', redirectTo:'/create', pathMatch:'full'},
   {path:'create', component: CreateTeamComponent},
   {path:'list-team', component: ListTeamComponent},
-  {path:'update-team', component: EditTeamComponent},
+  //{path:'update-team', component: EditTeamComponent},
+  {path:'edit-teams/:id', component: CreateTeamComponent},
   
   {
     path: 'auth',

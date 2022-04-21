@@ -12,7 +12,7 @@ import { PlayersService } from 'src/app/modules/auth/services/players.service';
 export class PlayersComponent implements OnInit {
   items: Observable<any[]>;
   players: any[] = [];
-  
+  //id: any[] = [];
   
   
   //getPlayers: any;
@@ -39,7 +39,7 @@ export class PlayersComponent implements OnInit {
   //  });
   //  console.log(this.players);
 
-   this._playersService.getPlayers().subscribe((teams: any)=> {
+   this._playersService.getPlayer().subscribe((teams: any)=> {
     this.changeStatus()
      for (let team of teams) {
        this.players.push(team)
@@ -60,6 +60,14 @@ export class PlayersComponent implements OnInit {
   }, 500);
 }
 
+
+  deletePlayers(id: string ){
+    this._playersService.deletePlayers(id).then(()=>{
+      console.log('player deleted!');
+    }).catch(error => {
+      console.log(error);
+    })
+  }
 
   }
   

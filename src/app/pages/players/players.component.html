@@ -97,19 +97,19 @@
 </form>
 -->
 
-<button class="btn btn-warning ml-auto" type="button" data-toggle="modal" data-target="#modalContactForm"><i class="fas fa-plus"></i> Add user</button>
+<button class="btn btn-warning ml-auto" type="button" data-toggle="modal" data-target="#modalContactForm" routerLink="/create-players"><i class="fas fa-plus"></i> Add user</button>
 
 <div class="container mt-4">
   <div class="card">
     <span class="h3">List Players</span>
-    <button class="btn btn-dark btn-lg float-right" routerLink="/create-players" >Add</button>
     
+    <h5 style="margin-top: 30px" *ngIf="players.length == 0">There is no players added</h5>
     <table class="table table-striped mt-5">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Player</th>
-          <th scope="col">Status</th>
+          
+          <th scope="col">Player :</th>
+          <th scope="col">Status :</th>
         </tr>
       </thead>
       <tbody>
@@ -117,8 +117,9 @@
           <td>{{player.name}}</td>
           <td>{{player.status}}</td>
           <td>
-            <i class="fas fa-edit fa-lg text-info mr-2"></i>
-            <i class="fas fa-trash-alt fa-lg text-danger "></i>
+  
+            <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/edit-players/', player.id]"></i>
+            <i (click)="deletePlayers(player.id)" class="fas fa-trash-alt fa-lg text-danger "></i>
           </td>
         </tr>
         
@@ -130,7 +131,7 @@
 
 
 
-
+<!--
 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -173,3 +174,4 @@
     </div>
   </div>
 </div>
+-->
